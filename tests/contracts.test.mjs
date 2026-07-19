@@ -5,7 +5,8 @@ import { join } from "node:path";
 
 test("JSON contracts parse", async () => {
   for (const file of ["schemas/project.schema.json","schemas/evidence.schema.json",".codex-plugin/plugin.json","package.json"]) {
-    assert.doesNotThrow(() => JSON.parse(await readFile(file, "utf8")));
+    const raw = await readFile(file, "utf8");
+    assert.doesNotThrow(() => JSON.parse(raw));
   }
 });
 
