@@ -1,14 +1,40 @@
 {
   "name": "scrollforge",
   "version": "0.1.0",
-  "description": "Internal spec-driven workflow for scroll-driven cinematic web sequences",
-  "skills": [
-    "./skills/scrollforge",
-    "./skills/media-inspector",
-    "./skills/frame-extractor",
-    "./skills/asset-optimizer",
-    "./skills/canvas-engineer",
-    "./skills/performance-guardian",
-    "./skills/visual-qa"
-  ]
+  "description": "Internal spec-driven toolkit for building and validating cinematic scroll-driven image sequences.",
+  "author": {
+    "name": "Diego Guedes",
+    "url": "https://github.com/DGuedz"
+  },
+  "homepage": "https://github.com/DGuedz/scrollforge",
+  "repository": "https://github.com/DGuedz/scrollforge",
+  "license": "MIT",
+  "keywords": [
+    "scroll-driven-animation",
+    "canvas",
+    "gsap",
+    "ffmpeg",
+    "performance"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ScrollForge",
+    "shortDescription": "Build proven scroll-driven sequences",
+    "longDescription": "Turn source video into auditable frame sequences, Canvas integrations and performance evidence.",
+    "developerName": "Diego Guedes",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Media inspection",
+      "Frame extraction",
+      "Canvas integration",
+      "Performance QA"
+    ],
+    "websiteURL": "https://github.com/DGuedz/scrollforge",
+    "defaultPrompt": [
+      "Build a scroll-driven scene from this video.",
+      "Audit this Canvas frame sequence.",
+      "Optimize these frames for mobile and desktop."
+    ],
+    "brandColor": "#D46A3A"
+  }
 }
