@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scrollforge.dev/schemas/motion.schema.json",
+  "title": "ScrollForge Motion Cues",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "cues"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "displayFamily": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bodyFamily": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "enum": [
+            "licensed-local",
+            "open-source",
+            "system"
+          ]
+        },
+        "licenseRef": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "cues": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "copy",
+          "enterStart",
+          "enterEnd",
+          "exitStart",
+          "exitEnd"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "copy": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "tag": {
+            "enum": [
+              "h1",
+              "h2",
+              "h3",
+              "p",
+              "blockquote"
+            ]
+          },
+          "align": {
+            "enum": [
+              "left",
+              "center",
+              "right"
+            ]
+          },
+          "enterPreset": {
+            "enum": [
+              "fade-up",
+              "fade-down",
+              "fade-left",
+              "fade-right",
+              "scale-in",
+              "fade-only"
+            ]
+          },
+          "enterStart": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "enterEnd": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "exitStart": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "exitEnd": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

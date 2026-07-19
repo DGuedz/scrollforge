@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../assets/motion/motion.css">
+  <title>ScrollForge Motion</title>
+</head>
+<body>
+  <main id="scene" style="position:relative;min-height:100svh;background:#080808">
+    <canvas id="frames" aria-label="Sequência visual controlada pela rolagem"></canvas>
+    <section id="copy" class="sf-motion-layer" aria-live="polite"></section>
+  </main>
+  <script type="module">
+    import { createScrollForgeMotion } from "../assets/motion/motion-runtime.js";
+    const config = await fetch("./motion-cues.json").then(response => response.json());
+    const motion = createScrollForgeMotion({ root: document.querySelector("#copy"), cues: config.cues });
+
+    // Feed this function with the same normalized progress used to choose the canvas frame.
+    window.renderScrollForge = progress => {
+      const frameIndex = Math.round(progress * (window.totalFrames - 1));
+      window.renderFrame?.(frameIndex);
+      motion.update(progress);
+    };
+  </script>
+</body>
+</html>

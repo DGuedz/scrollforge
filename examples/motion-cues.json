@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "typography": {
+    "displayFamily": "Manrope",
+    "bodyFamily": "Inter",
+    "source": "open-source",
+    "licenseRef": "https://openfontlicense.org"
+  },
+  "cues": [
+    {
+      "id": "opening",
+      "copy": "Sua história começa no movimento.",
+      "tag": "h1",
+      "align": "left",
+      "enterPreset": "fade-up",
+      "enterStart": 0.05,
+      "enterEnd": 0.14,
+      "exitStart": 0.28,
+      "exitEnd": 0.36
+    },
+    {
+      "id": "proof",
+      "copy": "Cada frame responde à intenção.",
+      "tag": "h2",
+      "align": "center",
+      "enterPreset": "scale-in",
+      "enterStart": 0.38,
+      "enterEnd": 0.48,
+      "exitStart": 0.63,
+      "exitEnd": 0.72
+    },
+    {
+      "id": "outcome",
+      "copy": "Cinema, código e copy em uma linha do tempo.",
+      "tag": "h2",
+      "align": "right",
+      "enterPreset": "fade-left",
+      "enterStart": 0.74,
+      "enterEnd": 0.82,
+      "exitStart": 0.94,
+      "exitEnd": 1
+    }
+  ]
+}
