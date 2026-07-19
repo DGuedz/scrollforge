@@ -1,0 +1,22 @@
+:root {
+  --sf-font-display: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --sf-font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --sf-copy-color: #fff;
+  --sf-copy-max: 18ch;
+  --sf-copy-shadow: 0 2px 24px rgb(0 0 0 / 45%);
+}
+
+.sf-motion-layer { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: clip; }
+.sf-motion-copy {
+  position: absolute; inset-inline: clamp(1.25rem, 6vw, 8rem); top: 50%; margin: 0;
+  max-inline-size: var(--sf-copy-max); color: var(--sf-copy-color);
+  font-family: var(--sf-font-display); font-size: clamp(2rem, 5.5vw, 6.5rem);
+  font-weight: 650; line-height: .94; letter-spacing: -.045em; text-wrap: balance;
+  text-shadow: var(--sf-copy-shadow); opacity: 0; transform: translate3d(0, 2rem, 0);
+  will-change: transform, opacity;
+}
+.sf-motion-copy[data-align="center"] { margin-inline: auto; text-align: center; }
+.sf-motion-copy[data-align="right"] { margin-inline-start: auto; text-align: right; }
+@media (prefers-reduced-motion: reduce) {
+  .sf-motion-copy { transition: none; transform: none !important; }
+}
